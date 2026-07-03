@@ -1,9 +1,9 @@
 {
   "model": "anthropic/claude-sonnet-4-20250514",
   "agent": {
-    "orchestrator": {
+    "presider": {
       "model": "anthropic/claude-sonnet-4-20250514",
-      "prompt": "file://agents/orchestrator/prompt.md",
+      "prompt": "file://agents/decision/presider/prompt.md",
       "tools": {
         "read": true,
         "search": true,
@@ -15,23 +15,9 @@
         "write": false
       }
     },
-    "developer": {
+    "architect_alpha": {
       "model": "anthropic/claude-sonnet-4-20250514",
-      "prompt": "file://agents/developer/prompt.md",
-      "tools": {
-        "read": true,
-        "search": true,
-        "glob": true,
-        "grep": true,
-        "ls": true,
-        "bash": true,
-        "edit": true,
-        "write": true
-      }
-    },
-    "reviewer": {
-      "model": "anthropic/claude-sonnet-4-20250514",
-      "prompt": "file://agents/reviewer/prompt.md",
+      "prompt": "file://agents/decision/architect/prompt.md",
       "tools": {
         "read": true,
         "search": true,
@@ -43,9 +29,9 @@
         "write": false
       }
     },
-    "researcher": {
-      "model": "openai/gpt-4o",
-      "prompt": "file://agents/researcher/prompt.md",
+    "architect_beta": {
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "prompt": "file://agents/decision/architect/prompt.md",
       "tools": {
         "read": true,
         "search": true,
@@ -57,31 +43,32 @@
         "write": false
       }
     },
-    "tester": {
+    "architect_gamma": {
       "model": "anthropic/claude-sonnet-4-20250514",
-      "prompt": "file://agents/tester/prompt.md",
+      "prompt": "file://agents/decision/architect/prompt.md",
       "tools": {
         "read": true,
         "search": true,
         "glob": true,
         "grep": true,
         "ls": true,
-        "bash": true,
-        "edit": true,
-        "write": true
+        "bash": false,
+        "edit": false,
+        "write": false
       }
     },
-    "documenter": {
-      "model": "openai/gpt-4o",
-      "prompt": "file://agents/documenter/prompt.md",
+    "judge": {
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "prompt": "file://agents/decision/judge/prompt.md",
       "tools": {
         "read": true,
         "search": true,
         "glob": true,
+        "grep": true,
         "ls": true,
         "bash": false,
-        "edit": true,
-        "write": true
+        "edit": false,
+        "write": false
       }
     }
   },
@@ -97,10 +84,6 @@
   },
   "plugin": [],
   "skills": {
-    "task-planning": "file://skills/task-planning/skill.md",
-    "code-review": "file://skills/code-review/skill.md",
-    "test-generation": "file://skills/test-generation/skill.md",
-    "documentation": "file://skills/documentation/skill.md",
-    "research": "file://skills/research/skill.md"
+    "proposal-competition": "file://skills/proposal-competition/skill.md"
   }
 }
