@@ -1,0 +1,106 @@
+{
+  "model": "anthropic/claude-sonnet-4-20250514",
+  "agent": {
+    "orchestrator": {
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "prompt": "file://agents/orchestrator/prompt.md",
+      "tools": {
+        "read": true,
+        "search": true,
+        "glob": true,
+        "grep": true,
+        "ls": true,
+        "bash": false,
+        "edit": false,
+        "write": false
+      }
+    },
+    "developer": {
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "prompt": "file://agents/developer/prompt.md",
+      "tools": {
+        "read": true,
+        "search": true,
+        "glob": true,
+        "grep": true,
+        "ls": true,
+        "bash": true,
+        "edit": true,
+        "write": true
+      }
+    },
+    "reviewer": {
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "prompt": "file://agents/reviewer/prompt.md",
+      "tools": {
+        "read": true,
+        "search": true,
+        "glob": true,
+        "grep": true,
+        "ls": true,
+        "bash": false,
+        "edit": false,
+        "write": false
+      }
+    },
+    "researcher": {
+      "model": "openai/gpt-4o",
+      "prompt": "file://agents/researcher/prompt.md",
+      "tools": {
+        "read": true,
+        "search": true,
+        "glob": true,
+        "grep": true,
+        "ls": true,
+        "bash": false,
+        "edit": false,
+        "write": false
+      }
+    },
+    "tester": {
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "prompt": "file://agents/tester/prompt.md",
+      "tools": {
+        "read": true,
+        "search": true,
+        "glob": true,
+        "grep": true,
+        "ls": true,
+        "bash": true,
+        "edit": true,
+        "write": true
+      }
+    },
+    "documenter": {
+      "model": "openai/gpt-4o",
+      "prompt": "file://agents/documenter/prompt.md",
+      "tools": {
+        "read": true,
+        "search": true,
+        "glob": true,
+        "ls": true,
+        "bash": false,
+        "edit": true,
+        "write": true
+      }
+    }
+  },
+  "mcp": {
+    "fetch": {
+      "type": "builtin",
+      "enabled": true
+    },
+    "brave-search": {
+      "type": "builtin",
+      "enabled": true
+    }
+  },
+  "plugin": [],
+  "skills": {
+    "task-planning": "file://skills/task-planning/skill.md",
+    "code-review": "file://skills/code-review/skill.md",
+    "test-generation": "file://skills/test-generation/skill.md",
+    "documentation": "file://skills/documentation/skill.md",
+    "research": "file://skills/research/skill.md"
+  }
+}
